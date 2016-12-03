@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+text {
+  font: 10px sans-serif;
+  text-anchor: middle;
+}
+</style>
+<svg width="6" height="0px" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid"></svg>
+<script src="https://d3js.org/d3.v3.min.js"></script>
+
+<head>Music Auto Tagger
+<title>This is only for demo!!</title>
+<style>
+    body {
+       background-color: white;
+    }
+    em {
+        color: LightSeaGreen;
+    }
+</style>
+</head>
+<h1>Music Auto Tagger</h1>
+
+
+<body>
+<!-- <form name="input" action="result" method="post">{% csrf_token %}
+    
+    <input type="text" name="video_url" value='{{ video_url }}'>
+    <input type="submit" value="Start">
+</form> -->
+
+<form action="/music-tag/" method="post">{% csrf_token %}
+<p>Please input the video URL</p>
+<!-- <label for="url">url: </label> -->
+<input id="test" type="text" name="url">
+<input type="submit" value="OK">
+</form>
+</body>
+
+<script>
+
+var diameter = 800, //max size of the bubbles
+    color    = d3.scale.category20b(); //color category
+
+var bubble = d3.layout.pack()
+    .sort(null)
+    .size([diameter, diameter])
+    .padding(1.5);
+
+var svg = d3.select("body")
+    .append("svg")
+    .attr("width", diameter)
+    .attr("height", diameter)
+    .attr("class", "bubble");
+
+
+// /Users/Frank/Documents/UCSC/TIM_209/project/demo/test/mysite/musictagger/static/music_tag.csv
+// /static/music_tag.csv
+// {% load static %}
+d3.csv('/static/music_tag.csv', function(error, data){
+
+    //convert numerical values from strings to numbers
+    data = data.map(function(d){ d.value = +d["Value"]; return d; });
+
+    //bubbles needs very specific format, convert data to this.
+    var nodes = bubble.nodes({children:data}).filter(function(d) { return !d.children; });
+
+    //setup the chart
+    var bubbles = svg.append("g")
+        .attr("transform", "translate(0,0)")
+        .selectAll(".bubble")
+        .data(nodes)
+        .enter();
+
+    //create the bubbles
+    bubbles.append("circle")
+        .attr("r", function(d){ return d.r; })
+        .attr("cx", function(d){ return d.x; })
+        .attr("cy", function(d){ return d.y; })
+        .style("fill", function(d) { return color(d.value); });
+
+    //format the text for each bubble
+    bubbles.append("text")
+        .attr("x", function(d){ return d.x; })
+        .attr("y", function(d){ return d.y + 5; })
+        .attr("text-anchor", "middle")
+        .text(function(d){ return d["Tag"]; })
+        .style({
+            "fill":"white", 
+            "font-family":"Helvetica Neue, Helvetica, Arial, san-serif",
+            "font-size": "20px"
+        });
+})
+</script>
+
+<div class="footer">
+    <p class="">All Right Reserved to Yuan-Ping Chen, Chuan-Yi Chan and Bo-Syun Liao</p>
+</div>
+<em>{{ current_time }}</em>

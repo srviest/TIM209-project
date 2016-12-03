@@ -1,0 +1,37 @@
+<!-- hello_world.html -->
+<!DOCTYPE html>
+<meta charset="utf-8">
+<svg width="100%" height="0px" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid"></svg>
+<html>
+    <head>Music Auto Tagger
+<title>This is only for demo!!</title>
+<style>
+    body {
+       background-color: white;
+    }
+    em {
+        color: LightSeaGreen;
+    }
+</style>
+</head>
+<h1>Music Auto Tagger</h1>
+
+    <body>
+    <!-- <form name="input" action="result" method="post">{% csrf_token %}
+        
+        <input type="text" name="video_url" value='{{ video_url }}'>
+        <input type="submit" value="Start">
+    </form> -->
+
+    <form action="/music-tag/" method="post">{% csrf_token %}
+    <p>Please input the video URL</p>
+    <!-- <label for="url">url: </label> -->
+    <input id="test" type="text" name="url">
+    <input type="submit" value="OK">
+    </form>
+    </body>
+    <div class="footer">
+        <p class="">All Right Reserved to Yuan-Ping Chen, Chuan-Yi Chan and Bo-Syun Liao</p>
+    </div>
+    <em>{{ current_time }}</em>
+</html>
