@@ -2,3 +2,4 @@
 *.wav
 *.melgram.npy
 data.npy
+.DS_Store
