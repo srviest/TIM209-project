@@ -6,13 +6,20 @@ text {
   text-anchor: middle;
 }
 </style>
-<svg width="6" height="0px" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid"></svg>
 <script src="https://d3js.org/d3.v3.min.js"></script>
 
-<head>Music Auto Tagger
+<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400" rel="stylesheet">
+    <h1><font color="white"><span style="font-family:'Roboto', sans-serif;"><span style="font-size:65px;">Music Auto-Tagger</span></font></h1>
+<!-- <p><font color="white"><span style="font-family: 'Roboto',sans-serif;"><span style="font-size:20px;"><br>This is a demo for UCSC TIM 209 course project.<br>The program will automatically generate top-25 from 50 music tags with a pre-trained 4-layer Convolutional Neural Networks.<br><br></span></font></p> -->
+<p style=" padding:10px 0px 5px 0px; height:auto; width:550px;"><font color="white"><span style="font-family:'Roboto', sans-serif;font-weight: lighter;"><span style="font-size:large;">This is a demo for UCSC TIM 209 course project.The program will automatically generate top-25 from 50 music tags with a pre-trained 4-layer Convolutional Neural Networks.<br></span></font>
 <title>This is only for demo!!</title>
 <style>
+{% load static %}
     body {
+        background: url('/static/cutie.jpg');
+
+        background-size: 100% auto;
        background-color: white;
     }
     em {
@@ -20,7 +27,7 @@ text {
     }
 </style>
 </head>
-<h1>Music Auto Tagger</h1>
+
 
 
 <body>
@@ -31,16 +38,17 @@ text {
 </form> -->
 
 <form action="/music-tag/" method="post">{% csrf_token %}
-<p>Please input the video URL</p>
-<!-- <label for="url">url: </label> -->
-<input id="test" type="text" name="url">
-<input type="submit" value="OK">
-</form>
-</body>
-
+    <p><font color="white"><span style="font-family: 'Roboto',sans-serif;font-weight: lighter;"><span style="font-size:large;">Enter your Youtube URL below and the tags will be rendered!</span></font></p>
+    <!-- <label for="url">url: </label> -->
+    <input id="test" type="text" name="url" style="width: 300px; height:20px";>
+    <input type="submit" value="OK" style="font-size:15px";>
+    </form>
+    </body>
+   </p>
+<svg width="0" height="600" viewBox="0 0 800 600" preserveAspectRatio="xMinYMin meet">
 <script>
 
-var diameter = 800, //max size of the bubbles
+var diameter = 700, //max size of the bubbles
     color    = d3.scale.category20b(); //color category
 
 var bubble = d3.layout.pack()
@@ -57,7 +65,7 @@ var svg = d3.select("body")
 
 // /Users/Frank/Documents/UCSC/TIM_209/project/demo/test/mysite/musictagger/static/music_tag.csv
 // /static/music_tag.csv
-// {% load static %}
+{% load static %}
 d3.csv('/static/music_tag.csv', function(error, data){
 
     //convert numerical values from strings to numbers
@@ -77,13 +85,13 @@ d3.csv('/static/music_tag.csv', function(error, data){
     bubbles.append("circle")
         .attr("r", function(d){ return d.r; })
         .attr("cx", function(d){ return d.x; })
-        .attr("cy", function(d){ return d.y; })
+        .attr("cy", function(d){ return d.y-50; })
         .style("fill", function(d) { return color(d.value); });
 
     //format the text for each bubble
     bubbles.append("text")
         .attr("x", function(d){ return d.x; })
-        .attr("y", function(d){ return d.y + 5; })
+        .attr("y", function(d){ return d.y + 5-50; })
         .attr("text-anchor", "middle")
         .text(function(d){ return d["Tag"]; })
         .style({
@@ -93,8 +101,7 @@ d3.csv('/static/music_tag.csv', function(error, data){
         });
 })
 </script>
-
-<div class="footer">
-    <p class="">All Right Reserved to Yuan-Ping Chen, Chuan-Yi Chan and Bo-Syun Liao</p>
-</div>
-<em>{{ current_time }}</em>
+</svg>
+<!-- <div class="footer">
+        <p style=" padding:550px 0px 5px 1000px; height:10px; width:600px;"><font color="white"><span style="font-family: 'Roboto',sans-serif;font-weight: lighter;"><span style="font-size:large;">All Right Reserved to Yuan-Ping Chen, Chuan-Yi Chan and Bo-Syun Liao</span></font></p>
+    </div> -->

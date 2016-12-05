@@ -24,6 +24,7 @@ def librosa_exists():
 
 def store_csv(result):
     import csv
+    result = result[0:25]
     with open(os.path.join(os.getcwd(), 'musictagger','static', 'music_tag.csv'), 'w') as f:
         writer = csv.writer(f, delimiter='\t')
         f.write('Tag')
@@ -103,10 +104,10 @@ print('Printing top-10 tags for each track...')
 for song_idx, audio_path in enumerate(audio_paths):
     sorted_result = sort_result(tags, pred_tags[song_idx, :].tolist())
     store_csv(sorted_result)
-    print(audio_path)
-    print(sorted_result[:5])
-    print(sorted_result[5:10])
-    print(' ')
+    # print(audio_path)
+    # print(sorted_result[:5])
+    # print(sorted_result[5:10])
+    # print(' ')
 
 # return
 

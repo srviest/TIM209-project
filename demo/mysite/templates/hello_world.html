@@ -1,20 +1,32 @@
 <!-- hello_world.html -->
 <!DOCTYPE html>
 <meta charset="utf-8">
-<svg width="100%" height="0px" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid"></svg>
+<!-- <svg width="70%" height="0px" viewBox="400 0 800 600" preserveAspectRatio="xMidYMid"></svg> -->
 <html>
-    <head>Music Auto Tagger
 <title>This is only for demo!!</title>
+<link href='http://fonts.googleapis.com/css?family=Oswald:400,700,300' rel='stylesheet' type='text/css'>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400" rel="stylesheet">
+    <h1><font color="white"><span style="font-family:'Roboto', sans-serif;"><span style="font-size:65px;">Music Auto-Tagger</span></font></h1>
+<!--     <p><font color="white"><span style="font-family: 'Roboto',sans-serif;"><span style="font-size:20px;"><br>This is a demo for UCSC TIM 209 course project.<br>The program will automatically generate top-25 from 50 music tags with a pre-trained 4-layer Convolutional Neural Networks.<br><br></span></font></p> -->
+
+<p style=" padding:10px 0px 5px 0px; height:auto; width:550px;"><font color="white"><span style="font-family:'Roboto', sans-serif; font-weight: lighter;"><span style="font-size:large;">This is a demo for UCSC TIM 209 course project.The program will automatically generate top-25 from 50 music tags with a pre-trained 4-layer Convolutional Neural Networks.<br></span></font>
+    
 <style>
+{% load static %}
     body {
-       background-color: white;
+        text-align: justify;
+     background: url('/static/cutie.jpg');
+     background-size: 100%;
+    
+　background-color:white;
     }
     em {
         color: LightSeaGreen;
     }
 </style>
 </head>
-<h1>Music Auto Tagger</h1>
+<!--<h1>Music Auto Tagger</h1>-->
+
 
     <body>
     <!-- <form name="input" action="result" method="post">{% csrf_token %}
@@ -22,16 +34,18 @@
         <input type="text" name="video_url" value='{{ video_url }}'>
         <input type="submit" value="Start">
     </form> -->
-
     <form action="/music-tag/" method="post">{% csrf_token %}
-    <p>Please input the video URL</p>
+    <p><font color="white"><span style="font-family: 'Roboto',sans-serif; font-weight: lighter;"><span style="font-size:large;">Enter your Youtube URL below and the tags will be rendered!</span></font></p>
     <!-- <label for="url">url: </label> -->
-    <input id="test" type="text" name="url">
-    <input type="submit" value="OK">
+    <input id="test" type="text" name="url" style="width: 300px; height:20px";>
+    <input type="submit" value="OK" style="font-size:15px";>
     </form>
     </body>
+   </p>
+
+
     <div class="footer">
-        <p class="">All Right Reserved to Yuan-Ping Chen, Chuan-Yi Chan and Bo-Syun Liao</p>
+        <p style=" padding:550px 0px 5px 1000px; height:10px; width:600px;"><font color="white"><span style="font-family: 'Roboto',sans-serif;font-weight: lighter;"><span style="font-size:large;">All Right Reserved to Yuan-Ping Chen, Chuan-Yi Chan and Bo-Syun Liao</span></font></p>
     </div>
-    <em>{{ current_time }}</em>
+    <!-- <em>{{ current_time }}</em> -->
 </html>

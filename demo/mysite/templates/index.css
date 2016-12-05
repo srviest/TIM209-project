@@ -8,3 +8,7 @@ body {
 #root {
   margin: 20px;
 }
+p {
+	font-family: Raleway;
+	font-size: 14px;
+}
