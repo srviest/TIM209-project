@@ -3,4 +3,4 @@ TIM209-project
 =============================================================================================================
 Data Mining and Business Analytics course work
 
-Automatic Music Genre Classificaiton using Convolutional Neural Networks
+Convolutional Neural Networks for content-based automatic music tagging using Keras
