@@ -17,9 +17,9 @@ Requirements
 
 Basic Usage
 ------
-``bash
+```bash
 $ python ./demo/mysite/manage.py runserver
-``
+```
 
 References
 ----------
