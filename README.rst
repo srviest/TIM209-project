@@ -17,9 +17,9 @@ Requirements
 
 Basic Usage
 ------
-```
+``
 $ python ./demo/mysite/manage.py runserver
-```
+``
 
 References
 ----------
