@@ -19,10 +19,7 @@ Basic Usage
 ------
 
 Example: 
-python GuitarTranscrption_script.py ./Input_audio.wav ./Result
-
-(the detail is in python GuitarTranscription_script.py -h.)
-
+python ./demo/mysite/manage.py runserver
 
 References
 ----------
