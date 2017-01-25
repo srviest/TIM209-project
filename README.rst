@@ -17,9 +17,8 @@ Requirements
 
 Basic Usage
 ------
-``
-$ python ./demo/mysite/manage.py runserver
-``
+.. code-block:: python.
+ $ python ./demo/mysite/manage.py runserver
 
 References
 ----------
