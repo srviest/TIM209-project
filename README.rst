@@ -17,7 +17,10 @@ Requirements
 
 Basic Usage
 ------
-.. code-block:: ``test``
+.. code-block:: 
+
+``test``
+
 References
 ----------
 
