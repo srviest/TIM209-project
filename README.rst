@@ -19,7 +19,7 @@ Basic Usage
 ------
 .. code-block:: 
 
-``test``
+``$ python ./demo/mysite/manage.py runserver``
 
 References
 ----------
