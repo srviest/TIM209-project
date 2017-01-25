@@ -6,3 +6,27 @@ Data Mining and Business Analytics course work
 Convolutional Neural Networks for content-based automatic music tagging using Keras
 
 .. image:: http://yp-chen.com/images/music-auto-tagger.png
+
+Requirements
+------------
+Keras
+LibROSA
+Django
+
+
+
+Basic Usage
+------
+
+Example: 
+python GuitarTranscrption_script.py ./Input_audio.wav ./Result
+
+(the detail is in python GuitarTranscription_script.py -h.)
+
+
+References
+----------
+
+.. [1] Keunwoo Choi, George Fazekas and Mark Sandler,
+    *Automatic Tagging using Deep Convolutional Neural Networks*,
+    17th International Society for Music Information Retrieval Conference, New York, USA, 2016.
