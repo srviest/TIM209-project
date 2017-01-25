@@ -9,19 +9,17 @@ Convolutional Neural Networks for content-based automatic music tagging using Ke
 
 Requirements
 ------------
-Keras
-LibROSA
-Django
+- Keras
+- LibROSA
+- Django
 
 
 
 Basic Usage
 ------
-```bash
+``bash
 $ python ./demo/mysite/manage.py runserver
-```
-Example: 
-python 
+``
 
 References
 ----------
