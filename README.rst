@@ -3,6 +3,9 @@ TIM209-project
 =============================================================================================================
 Data Mining and Business Analytics course work
 
+
+Description
+------
 Convolutional Neural Networks for content-based automatic music tagging using Keras
 
 .. image:: http://yp-chen.com/images/music-auto-tagger.png
