@@ -17,9 +17,11 @@ Django
 
 Basic Usage
 ------
-
+```bash
+$ python ./demo/mysite/manage.py runserver
+```
 Example: 
-python ./demo/mysite/manage.py runserver
+python 
 
 References
 ----------
